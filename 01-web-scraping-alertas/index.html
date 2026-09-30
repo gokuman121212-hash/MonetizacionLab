@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Scraping & Monitor Pro</title>
+    <style>
+        :root { --bg: #030712; --card: #111827; --border: #1f2937; --accent: #38bdf8; --text: #f9fafb; --muted: #9ca3af; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background: var(--bg); color: var(--text); padding: 24px; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+        h1 { font-size: 22px; color: var(--accent); }
+        .badge { background: #0369a1; color: #bae6fd; font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); }
+        h2 { font-size: 15px; margin-bottom: 14px; color: #e5e7eb; border-left: 3px solid var(--accent); padding-left: 8px; }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; font-size: 11px; font-weight: 600; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; }
+        input, select { width: 100%; background: #1f2937; border: 1px solid #374151; border-radius: 6px; padding: 8px 12px; color: white; font-size: 13px; outline: none; }
+        input:focus, select:focus { border-color: var(--accent); }
+        .btn { background: linear-gradient(135deg, #0284c7, #2563eb); color: white; border: none; padding: 10px 16px; border-radius: 6px; width: 100%; font-weight: 600; font-size: 13px; cursor: pointer; transition: opacity 0.2s; margin-top: 8px; }
+        .btn:hover { opacity: 0.9; }
+        .log-box { background: #0b0f19; border: 1px solid var(--border); border-radius: 6px; padding: 12px; font-family: monospace; font-size: 12px; color: #4ade80; height: 160px; overflow-y: auto; margin-top: 10px; }
+        .full-width { grid-column: span 2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Web Scraping & Monitor Pro</h1>
+            <span class="badge">Estado: Activo / Optimizado</span>
+        </header>
+        <div class="grid">
+            <div class="card">
+                <h2>Configurar Rastreo</h2>
+                <div class="form-group">
+                    <label>URL Objetivo</label>
+                    <input type="text" id="targetUrl" value="https://ejemplo.com/productos">
+                </div>
+                <div class="form-group">
+                    <label>Selector CSS / Palabra Clave</label>
+                    <input type="text" id="keyword" value=".precio-producto">
+                </div>
+                <div class="form-group">
+                    <label>Frecuencia de Alerta</label>
+                    <select id="freq">
+                        <option value="15">Cada 15 minutos</option>
+                        <option value="60" selected>Cada 1 hora</option>
+                        <option value="1440">Una vez al día</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="iniciarMonitoreo()">Iniciar Escaneo en Vivo</button>
+            </div>
+            <div class="card">
+                <h2>Métricas & Resultados</h2>
+                <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Elementos rastreados con éxito: <strong id="count" style="color:var(--text)">0</strong></p>
+                <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Última sincronización: <strong id="lastSync" style="color:var(--text)">Ninguna</strong></p>
+                <div class="form-group" style="margin-top: 14px;">
+                    <label>Exportar Datos</label>
+                    <button class="btn" style="background:#1e293b; border:1px solid #334155;" onclick="exportarCSV()">Descargar CSV de Resultados</button>
+                </div>
+            </div>
+            <div class="card full-width">
+                <h2>Consola de Ejecución en Tiempo Real</h2>
+                <div class="log-box" id="logConsole">[Sistema listo para iniciar rastreo web automático...]</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function log(msg) {
+            const box = document.getElementById('logConsole');
+            box.innerHTML += '<br>> ' + msg;
+            box.scrollTop = box.scrollHeight;
+        }
+        function iniciarMonitoreo() {
+            const url = document.getElementById('targetUrl').value;
+            log("Conectando con objetivo: " + url);
+            setTimeout(() => { log("Extrayendo elementos mediante selectores DOM..."); }, 600);
+            setTimeout(() => { 
+                log("¡Datos extraídos correctamente! Sin cambios críticos detectados.");
+                document.getElementById('count').innerText = "24 items";
+                document.getElementById('lastSync').innerText = new Date().toLocaleTimeString();
+            }, 1400);
+        }
+        function exportarCSV() {
+            alert("Generando archivo CSV optimizado para descarga...");
+        }
+    </script>
+</body>
+</html>

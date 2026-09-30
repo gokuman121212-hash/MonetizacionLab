@@ -3,37 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Copys IA | MonetizacionLab</title>
+    <title>Generador de Copys IA Pro</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
         body { background: #030712; color: #f9fafb; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-        .container { background: #111827; border: 1px solid #1f2937; border-radius: 12px; width: 100%; max-width: 500px; padding: 24px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); }
-        h1 { font-size: 20px; color: #38bdf8; margin-bottom: 6px; }
+        .container { background: #111827; border: 1px solid #1f2937; border-radius: 12px; width: 100%; max-width: 550px; padding: 24px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); }
+        h1 { font-size: 20px; color: #ec4899; margin-bottom: 6px; }
         p.subtitle { font-size: 13px; color: #9ca3af; margin-bottom: 20px; }
         .form-group { margin-bottom: 16px; }
-        label { display: block; font-size: 12px; font-weight: 600; color: #d1d5db; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-        input[type="text"] { width: 100%; background: #1f2937; border: 1px solid #374151; border-radius: 8px; padding: 10px 14px; color: white; font-size: 14px; outline: none; transition: border-color 0.2s; }
-        input[type="text"]:focus { border-color: #38bdf8; }
-        button { background: linear-gradient(135deg, #0284c7, #2563eb); color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; font-weight: 600; font-size: 14px; cursor: pointer; transition: opacity 0.2s; }
+        label { display: block; font-size: 11px; font-weight: 600; color: #d1d5db; margin-bottom: 6px; text-transform: uppercase; }
+        input, select { width: 100%; background: #1f2937; border: 1px solid #374151; border-radius: 8px; padding: 10px 14px; color: white; font-size: 14px; outline: none; }
+        input:focus, select:focus { border-color: #ec4899; }
+        button { background: linear-gradient(135deg, #db2777, #9333ea); color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; font-weight: 600; font-size: 14px; cursor: pointer; transition: opacity 0.2s; }
         button:hover { opacity: 0.9; }
         .results { margin-top: 20px; border-top: 1px solid #1f2937; padding-top: 16px; display: none; }
-        .copy-box { background: #1f2937; border-left: 3px solid #38bdf8; padding: 10px 12px; border-radius: 0 8px 8px 0; font-size: 13px; margin-bottom: 10px; color: #e5e7eb; line-height: 1.4; }
+        .copy-box { background: #1f2937; border-left: 3px solid #ec4899; padding: 10px 12px; border-radius: 0 8px 8px 0; font-size: 13px; margin-bottom: 10px; color: #e5e7eb; line-height: 1.4; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Generador de Copys IA</h1>
-        <p class="subtitle">Crea textos persuasivos de alto impacto para negocios locales al instante.</p>
+        <h1>Generador de Copys IA Pro</h1>
+        <p class="subtitle">Crea textos persuasivos de alta conversión para redes sociales y WhatsApp.</p>
         
         <div class="form-group">
-            <label for="producto">Producto o Servicio</label>
-            <input type="text" id="producto" placeholder="Ej. Zapatillas urbanas, Barbería VIP...">
+            <label for="producto">Producto, Servicio o Negocio</label>
+            <input type="text" id="producto" placeholder="Ej. Zapatillas Urbanas, Soporte Técnico PC...">
+        </div>
+        <div class="form-group">
+            <label for="tono">Tono del Mensaje</label>
+            <select id="tono">
+                <option value="urgente">Urgente & Oferta por tiempo limitado</option>
+                <option value="educativo">Informativo & Profesional</option>
+                <option value="casual">Cercano & Juvenil (WhatsApp)</option>
+            </select>
         </div>
         
-        <button onclick="generarCopys()">Generar Textos Rápidos</button>
+        <button onclick="generarCopys()">Generar Textos Inteligentes</button>
 
         <div class="results" id="resultsBox">
-            <label style="margin-bottom: 10px;">Opciones Generadas:</label>
+            <label style="margin-bottom: 10px; color:#f472b6;">Opciones Optimizadas Generadas:</label>
             <div class="copy-box" id="res1"></div>
             <div class="copy-box" id="res2"></div>
             <div class="copy-box" id="res3"></div>
@@ -43,15 +51,16 @@
     <script>
         function generarCopys() {
             const prod = document.getElementById('producto').value.trim();
-            if(!prod) {
-                alert('Por favor ingresa un producto o servicio.');
-                return;
-            }
+            const tono = document.getElementById('tono').value;
+            if(!prod) { alert('Por favor ingresa un producto o servicio.'); return; }
             
-            document.getElementById('res1').innerText = "🚀 ¡Lleva tu negocio al siguiente nivel con " + prod + "! Diseñado para destacar, atraer más clientes y vender más rápido.";
-            document.getElementById('res2').innerText = "🔥 ¿Cansado de los mismos resultados? Descubre el poder de " + prod + " hoy mismo y ahorra horas de trabajo.";
-            document.getElementById('res3').innerText = "💡 Solución rápida y efectiva: " + prod + ". ¡Escríbenos al DM para separar el tuyo antes de que se agote el stock!";
+            let c1 = 🚀 ¡Atención Arequipa! Llega lo mejor en . Calidad garantizada y entrega inmediata. ¡Escríbenos al DM!;
+            let c2 = 🔥 ¿Buscas  al mejor precio del mercado? No te quedes sin el tuyo. ¡Stock limitado para esta semana!;
+            let c3 = 💡 Solución recomendada: . Diseñado para hacer tu día mucho más fácil y eficiente. ¡Reserva el tuyo hoy!;
             
+            document.getElementById('res1').innerText = c1;
+            document.getElementById('res2').innerText = c2;
+            document.getElementById('res3').innerText = c3;
             document.getElementById('resultsBox').style.display = 'block';
         }
     </script>

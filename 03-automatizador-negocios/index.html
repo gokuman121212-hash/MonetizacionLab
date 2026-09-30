@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Automation Hub</title>
+    <style>
+        :root { --bg: #030712; --card: #111827; --border: #1f2937; --accent: #f59e0b; --text: #f9fafb; --muted: #9ca3af; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background: var(--bg); color: var(--text); padding: 24px; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+        h1 { font-size: 22px; color: var(--accent); }
+        .badge { background: #78350f; color: #fde68a; font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+        h2 { font-size: 15px; margin-bottom: 14px; color: #e5e7eb; border-left: 3px solid var(--accent); padding-left: 8px; }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; font-size: 11px; font-weight: 600; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; }
+        input { width: 100%; background: #1f2937; border: 1px solid #374151; border-radius: 6px; padding: 8px 12px; color: white; font-size: 13px; outline: none; }
+        input:focus { border-color: var(--accent); }
+        .btn { background: linear-gradient(135deg, #d97706, #b45309); color: white; border: none; padding: 10px 16px; border-radius: 6px; width: 100%; font-weight: 600; font-size: 13px; cursor: pointer; margin-top: 8px; }
+        .metric { font-size: 24px; font-weight: bold; color: #fbbf24; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Business Automation Hub</h1>
+            <span class="badge">Módulo Comercial</span>
+        </header>
+        <div class="grid">
+            <div class="card">
+                <h2>Calculadora de Presupuestos</h2>
+                <div class="form-group">
+                    <label>Costo Base del Servicio ($)</label>
+                    <input type="number" id="costoBase" value="150">
+                </div>
+                <div class="form-group">
+                    <label>Margen de Ganancia (%)</label>
+                    <input type="number" id="margen" value="40">
+                </div>
+                <button class="btn" onclick="calcular()">Calcular Cotización</button>
+            </div>
+            <div class="card">
+                <h2>Resultado Comercial</h2>
+                <p style="font-size: 13px; color: var(--muted);">Precio final sugerido al cliente:</p>
+                <div class="metric" id="precioFinal">.00 USD</div>
+                <p style="font-size: 12px; color: var(--muted); margin-top: 15px;">Incluye impuestos estimados y soporte técnico inicial integrado.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calcular() {
+            const base = parseFloat(document.getElementById('costoBase').value) || 0;
+            const margen = parseFloat(document.getElementById('margen').value) || 0;
+            const total = base * (1 + (margen / 100));
+            document.getElementById('precioFinal').innerText = "$" + total.toFixed(2) + " USD";
+        }
+        calcular();
+    </script>
+</body>
+</html>

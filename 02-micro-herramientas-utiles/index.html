@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>DevToolbox Pro - Utilidades Rápidas</title>
+    <style>
+        :root { --bg: #030712; --card: #111827; --border: #1f2937; --accent: #10b981; --text: #f9fafb; --muted: #9ca3af; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background: var(--bg); color: var(--text); padding: 24px; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+        h1 { font-size: 22px; color: var(--accent); }
+        .badge { background: #064e3b; color: #a7f3d0; font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+        h2 { font-size: 15px; margin-bottom: 14px; color: #e5e7eb; border-left: 3px solid var(--accent); padding-left: 8px; }
+        textarea { width: 100%; height: 90px; background: #1f2937; border: 1px solid #374151; border-radius: 6px; padding: 8px; color: white; font-family: monospace; font-size: 12px; resize: none; outline: none; }
+        .btn-group { display: flex; gap: 8px; margin-top: 10px; }
+        .btn { background: #059669; color: white; border: none; padding: 8px 12px; border-radius: 6px; flex: 1; font-weight: 600; font-size: 12px; cursor: pointer; transition: opacity 0.2s; }
+        .btn:hover { opacity: 0.9; }
+        .full-width { grid-column: span 2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DevToolbox Pro Suite</h1>
+            <span class="badge">Utilidades Activas</span>
+        </header>
+        <div class="grid">
+            <div class="card">
+                <h2>Formateador & Validador JSON</h2>
+                <textarea id="jsonInput" placeholder="Pega tu JSON aquí...">{ "proyecto": "MonetizacionLab", "estado": "Activo" }</textarea>
+                <div class="btn-group">
+                    <button class="btn" onclick="formatearJSON()">Formatear</button>
+                    <button class="btn" style="background:#374151;" onclick="limpiarJSON()">Limpiar</button>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Generador de SQL Tables (CRUD)</h2>
+                <textarea id="sqlInput" placeholder="Nombre de tabla y campos...">CREATE TABLE usuarios ( id INT AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(100) );</textarea>
+                <div class="btn-group">
+                    <button class="btn" onclick="generarSQL()">Generar Plantilla</button>
+                </div>
+            </div>
+            <div class="card full-width">
+                <h2>Salida / Resultado del Procesamiento</h2>
+                <textarea id="outputBox" style="height: 100px; color: #34d399;" readonly>Los resultados aparecerán aquí procesados al instante...</textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+        function formatearJSON() {
+            try {
+                const val = document.getElementById('jsonInput').value;
+                const parsed = JSON.parse(val);
+                document.getElementById('outputBox').value = JSON.stringify(parsed, null, 4);
+            } catch(e) {
+                document.getElementById('outputBox').value = "Error: JSON inválido -> " + e.message;
+            }
+        }
+        function limpiarJSON() {
+            document.getElementById('jsonInput').value = '';
+            document.getElementById('outputBox').value = '';
+        }
+        function generarSQL() {
+            document.getElementById('outputBox').value = "-- Plantilla SQL generada con éxito\nSELECT * FROM usuarios WHERE estado = 1 ORDER BY id DESC;";
+        }
+    </script>
+</body>
+</html>
