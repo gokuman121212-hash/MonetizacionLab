@@ -1,42 +1,34 @@
 ﻿[
     {
         "id": "1",
-        "nombre": "Ramo de 24 Rosas Rojas Passion",
-        "categoria": "Rosas",
-        "precio": "120.00",
-        "descripcion": "Hermoso arreglo de 24 rosas rojas selectas de exportación con follaje fino y tarjeta dedicatoria.",
-        "slug": "ramo-24-rosas-rojas"
+        "nombre": "Consultoría de Arquitectura de Software",
+        "categoria": "Servicios B2B",
+        "precio": "450.00",
+        "descripcion": "Diseño y estructuración de bases de código escalables, patrones de diseño POO y optimización de rendimiento.",
+        "slug": "consultoria-arquitectura-software"
     },
     {
         "id": "2",
-        "nombre": "Caja Box de Girasoles Brillantes",
-        "categoria": "Girasoles",
-        "precio": "95.00",
-        "descripcion": "Girasoles frescos acompañados de margaritas blancas en elegante caja rígida estilo box.",
-        "slug": "caja-box-girasoles"
+        "nombre": "Desarrollo de Aplicación Móvil nativa",
+        "categoria": "Mobile",
+        "precio": "1200.00",
+        "descripcion": "Apps modernas optimizadas con interfaces fluidas, sincronización en tiempo real y arquitectura limpia.",
+        "slug": "desarrollo-app-movil"
     },
     {
         "id": "3",
-        "nombre": "Bouquet Silvestre de Orquídeas",
-        "categoria": "Exóticas",
-        "precio": "160.00",
-        "descripcion": "Orquídeas finas combinadas con detalles de temporada para ocasiones sumamente especiales.",
-        "slug": "bouquet-silvestre-orquideas"
+        "nombre": "Automatización con Python e IA Local",
+        "categoria": "AI & Automation",
+        "precio": "600.00",
+        "descripcion": "Implementación de modelos locales como Llama 3 para flujos de trabajo autónomos y procesamiento de datos.",
+        "slug": "automatizacion-python-ia"
     },
     {
         "id": "4",
-        "nombre": "Arreglo Fúnebre Condolencias",
-        "categoria": "Especiales",
-        "precio": "220.00",
-        "descripcion": "Corona sobria y elegante con flores blancas y toques verdes para momentos solemnes.",
-        "slug": "arreglo-funebre-condolencias"
-    },
-    {
-        "id": "5",
-        "nombre": "Box Romántico de Rosas y Chocolates",
-        "categoria": "Combos",
-        "precio": "140.00",
-        "descripcion": "Combinación perfecta de rosas premium y finos chocolates artesanales con dedicatoria.",
-        "slug": "box-romantico-rosas-chocolates"
+        "nombre": "Auditoría de Seguridad y Base de Datos",
+        "categoria": "Database",
+        "precio": "350.00",
+        "descripcion": "Revisión integral de esquemas SQL/NoSQL, índices, prevención de inyecciones y optimización de consultas.",
+        "slug": "auditoria-seguridad-bd"
     }
 ]

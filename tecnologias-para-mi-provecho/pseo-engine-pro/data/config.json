@@ -1,9 +1,11 @@
 ﻿{
-    "sitio_nombre": "Rosatel & Florería Arequipa Pro",
-    "dominio_base": "https://tu-tienda-flores.com",
+    "sitio_nombre": "Aura Luxury Store & Services",
+    "dominio_base": "https://auraluxury.com",
     "autor": "Cristhian Flores",
     "idioma": "es-PE",
-    "color_primario": "#db2777",
+    "color_primario": "#6366f1",
+    "color_secundario": "#ec4899",
     "contacto_whatsapp": "+51900000000",
-    "moneda": "PEN"
+    "moneda": "PEN",
+    "tier_complejidad": 4
 }
