@@ -1,8 +1,8 @@
 ﻿# ==============================================================================
-# Script Principal de Ejecución - PSEO Engine Pro Enterprise
+# Script Principal - PSEO E-commerce Engine v5.0
 # ==============================================================================
-from core.compiler import PSEOEnterpriseCompiler
+from core.compiler import PSEOCatalogCompiler
 
 if __name__ == "__main__":
-    motor = PSEOEnterpriseCompiler()
+    motor = PSEOCatalogCompiler()
     motor.compilar()
