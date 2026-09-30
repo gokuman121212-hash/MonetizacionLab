@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Cotizador Rápido - MonetizacionLab</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: #1e293b; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); width: 350px; }
+        h2 { color: #38bdf8; margin-top: 0; text-align: center; }
+        label { display: block; margin-bottom: 8px; font-size: 14px; }
+        input { width: 100%; padding: 10px; margin-bottom: 15px; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; background: #0284c7; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #0369a1; }
+        .result { margin-top: 20px; background: #0f172a; padding: 12px; border-radius: 6px; text-align: center; font-size: 16px; border: 1px solid #334155; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Calculadora de Ganancia</h2>
+        <label for="costo">Costo del producto (S/.):</label>
+        <input type="number" id="costo" placeholder="Ej. 25">
+        <label for="porcentaje">Ganancia deseada (%):</label>
+        <input type="number" id="porcentaje" placeholder="Ej. 40" value="40">
+        <button onclick="calcularPrecio()">Calcular Precio de Venta</button>
+        <div class="result" id="resultado">Precio sugerido: S/. 0.00</div>
+    </div>
+    <script>
+        function calcularPrecio() {
+            let costo = parseFloat(document.getElementById('costo').value);
+            let porcentaje = parseFloat(document.getElementById('porcentaje').value);
+            if(isNaN(costo) || isNaN(porcentaje)) {
+                document.getElementById('resultado').innerHTML = "Por favor ingresa valores válidos.";
+                return;
+            }
+            let ganancia = costo * (porcentaje / 100);
+            let total = costo + ganancia;
+            document.getElementById('resultado').innerHTML = "Precio sugerido: <b>S/. " + total.toFixed(2) + "</b>";
+        }
+    </script>
+</body>
+</html>
