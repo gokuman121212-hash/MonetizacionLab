@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Copys IA | MonetizacionLab</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background: #030712; color: #f9fafb; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+        .container { background: #111827; border: 1px solid #1f2937; border-radius: 12px; width: 100%; max-width: 500px; padding: 24px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); }
+        h1 { font-size: 20px; color: #38bdf8; margin-bottom: 6px; }
+        p.subtitle { font-size: 13px; color: #9ca3af; margin-bottom: 20px; }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-size: 12px; font-weight: 600; color: #d1d5db; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        input[type="text"] { width: 100%; background: #1f2937; border: 1px solid #374151; border-radius: 8px; padding: 10px 14px; color: white; font-size: 14px; outline: none; transition: border-color 0.2s; }
+        input[type="text"]:focus { border-color: #38bdf8; }
+        button { background: linear-gradient(135deg, #0284c7, #2563eb); color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; font-weight: 600; font-size: 14px; cursor: pointer; transition: opacity 0.2s; }
+        button:hover { opacity: 0.9; }
+        .results { margin-top: 20px; border-top: 1px solid #1f2937; padding-top: 16px; display: none; }
+        .copy-box { background: #1f2937; border-left: 3px solid #38bdf8; padding: 10px 12px; border-radius: 0 8px 8px 0; font-size: 13px; margin-bottom: 10px; color: #e5e7eb; line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Copys IA</h1>
+        <p class="subtitle">Crea textos persuasivos de alto impacto para negocios locales al instante.</p>
+        
+        <div class="form-group">
+            <label for="producto">Producto o Servicio</label>
+            <input type="text" id="producto" placeholder="Ej. Zapatillas urbanas, Barbería VIP...">
+        </div>
+        
+        <button onclick="generarCopys()">Generar Textos Rápidos</button>
+
+        <div class="results" id="resultsBox">
+            <label style="margin-bottom: 10px;">Opciones Generadas:</label>
+            <div class="copy-box" id="res1"></div>
+            <div class="copy-box" id="res2"></div>
+            <div class="copy-box" id="res3"></div>
+        </div>
+    </div>
+
+    <script>
+        function generarCopys() {
+            const prod = document.getElementById('producto').value.trim();
+            if(!prod) {
+                alert('Por favor ingresa un producto o servicio.');
+                return;
+            }
+            
+            document.getElementById('res1').innerText = "🚀 ¡Lleva tu negocio al siguiente nivel con " + prod + "! Diseñado para destacar, atraer más clientes y vender más rápido.";
+            document.getElementById('res2').innerText = "🔥 ¿Cansado de los mismos resultados? Descubre el poder de " + prod + " hoy mismo y ahorra horas de trabajo.";
+            document.getElementById('res3').innerText = "💡 Solución rápida y efectiva: " + prod + ". ¡Escríbenos al DM para separar el tuyo antes de que se agote el stock!";
+            
+            document.getElementById('resultsBox').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
