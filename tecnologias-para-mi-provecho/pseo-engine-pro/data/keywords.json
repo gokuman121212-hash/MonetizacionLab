@@ -1,34 +1,50 @@
-﻿[
-    {
-        "id": "1",
-        "nombre": "Consultoría de Arquitectura de Software",
-        "categoria": "Servicios B2B",
-        "precio": "450.00",
-        "descripcion": "Diseño y estructuración de bases de código escalables, patrones de diseño POO y optimización de rendimiento.",
-        "slug": "consultoria-arquitectura-software"
-    },
-    {
-        "id": "2",
-        "nombre": "Desarrollo de Aplicación Móvil nativa",
-        "categoria": "Mobile",
-        "precio": "1200.00",
-        "descripcion": "Apps modernas optimizadas con interfaces fluidas, sincronización en tiempo real y arquitectura limpia.",
-        "slug": "desarrollo-app-movil"
-    },
-    {
-        "id": "3",
-        "nombre": "Automatización con Python e IA Local",
-        "categoria": "AI & Automation",
-        "precio": "600.00",
-        "descripcion": "Implementación de modelos locales como Llama 3 para flujos de trabajo autónomos y procesamiento de datos.",
-        "slug": "automatizacion-python-ia"
-    },
-    {
-        "id": "4",
-        "nombre": "Auditoría de Seguridad y Base de Datos",
-        "categoria": "Database",
-        "precio": "350.00",
-        "descripcion": "Revisión integral de esquemas SQL/NoSQL, índices, prevención de inyecciones y optimización de consultas.",
-        "slug": "auditoria-seguridad-bd"
-    }
-]
+﻿{
+    "ecommerce": [
+        {"id": 1, "rubro": "Tecnología y Componentes de PC", "slug": "tecnologia-componentes-pc", "beneficio": "Hardware selecto con garantía y compatibilidad asegurada."},
+        {"id": 2, "rubro": "Moda y Ropa (Indumentaria)", "slug": "moda-ropa-indumentaria", "beneficio": "Tendencias urbanas y formales con tallas exactas."},
+        {"id": 3, "rubro": "Alimentos y Supermercados Online", "slug": "supermercado-online", "beneficio": "Abarrotes y frescos entregados en la puerta de tu casa."},
+        {"id": 4, "rubro": "Belleza y Cuidado Personal (Skincare)", "slug": "belleza-skincare", "beneficio": "Productos dermatológicos para el cuidado óptimo de tu piel."},
+        {"id": 5, "rubro": "Joyería y Relojería", "slug": "joyeria-relojeria", "beneficio": "Elegancia y sofisticación con certificado de autenticidad."},
+        {"id": 6, "rubro": "Muebles y Decoración del Hogar", "slug": "muebles-decoracion", "beneficio": "Diseño de interiores y mobiliario minimalista a medida."},
+        {"id": 7, "rubro": "Artículos Deportivos y Fitness", "slug": "deportes-fitness", "beneficio": "Equipamiento profesional para entrenar en casa o gimnasio."},
+        {"id": 8, "rubro": "Tiendas de Mascotas (Pet Shops)", "slug": "pet-shop-mascotas", "beneficio": "Alimento balanceado y accesorios para consentir a tu engreído."},
+        {"id": 9, "rubro": "Juguetería y Entretenimiento Infantil", "slug": "jugueteria-infantil", "beneficio": "Juegos didácticos y seguros libres de materiales tóxicos."},
+        {"id": 10, "rubro": "Librería y Papelería Digital", "slug": "libreria-papeleria", "beneficio": "Textos académicos y material de oficina con despacho rápido."}
+    ],
+    "servicios_locales": [
+        {"id": 11, "rubro": "Soporte Técnico y Mantenimiento", "slug": "soporte-tecnico-mantenimiento", "beneficio": "Reparación y optimización de equipos informáticos a domicilio."},
+        {"id": 12, "rubro": "Desarrollo de Software y Páginas Web", "slug": "desarrollo-software-web", "beneficio": "Sistemas a medida, apps móviles y automatización con IA."},
+        {"id": 13, "rubro": "Marketing Digital y SEO", "slug": "marketing-digital-seo", "beneficio": "Estrategias de pauta y posicionamiento web con alto ROI."},
+        {"id": 14, "rubro": "Mecánica Automotriz y Talleres", "slug": "mecanica-automotriz", "beneficio": "Diagnóstico computarizado y afinamiento para tu vehículo."},
+        {"id": 15, "rubro": "Servicios de Cerrajería 24/7", "slug": "cerrajeria-24-7", "beneficio": "Atención de emergencias residenciales y apertura de puertas."},
+        {"id": 16, "rubro": "Gasfitería y Plomería", "slug": "gasfiteria-plomeria", "beneficio": "Detección de fugas y reparaciones sanitarias urgentes."},
+        {"id": 17, "rubro": "Electricistas Residenciales e Industriales", "slug": "electricistas-residenciales", "beneficio": "Instalación de tableros, cableados y pozos a tierra certificados."},
+        {"id": 18, "rubro": "Empresas de Mudanzas y Transporte", "slug": "mudanzas-transporte", "beneficio": "Traslado seguro de carga local y nacional con embalaje."},
+        {"id": 19, "rubro": "Limpieza Residencial y de Oficinas", "slug": "limpieza-residencial", "beneficio": "Aseo profundo e higienización de espacios con personal verificado."},
+        {"id": 20, "rubro": "Control de Plagas y Fumigación", "slug": "control-plagas-fumigacion", "beneficio": "Exterminio seguro de plagas con protocolos sanitarios."}
+    ],
+    "salud_bienestar": [
+        {"id": 21, "rubro": "Clínicas Dentales y Odontología", "slug": "clinica-dental-odontologia", "beneficio": "Ortodoncia e implantes con tecnología clínica avanzada."},
+        {"id": 22, "rubro": "Centros Médicos y Especialidades", "slug": "centros-medicos-especialidades", "beneficio": "Atención con especialistas de salud y citas en línea."},
+        {"id": 23, "rubro": "Farmacias y Parafarmacias", "slug": "farmacia-delivery", "beneficio": "Medicamentos y productos de salud con entrega express."},
+        {"id": 24, "rubro": "Gimnasios y Centros de Crossfit", "slug": "gimnasios-crossfit", "beneficio": "Entrenamiento de alto rendimiento y asesoría profesional."},
+        {"id": 25, "rubro": "Nutrición y Dietética", "slug": "nutricion-dietetica", "beneficio": "Planes de alimentación personalizados para tus objetivos."},
+        {"id": 26, "rubro": "Salones de Belleza y Spas", "slug": "salones-belleza-spa", "beneficio": "Tratamientos estéticos, masajes relajantes y cuidado capilar."},
+        {"id": 27, "rubro": "Psicología y Salud Mental", "slug": "psicologia-salud-mental", "beneficio": "Terapias profesionales en un entorno confidencial y seguro."},
+        {"id": 28, "rubro": "Veterinarias y Clínicas de Animales", "slug": "veterinaria-clinica-animal", "beneficio": "Urgencias 24h, cirugía y cuidado integral para mascotas."}
+    ],
+    "corporativo_inmobiliario": [
+        {"id": 29, "rubro": "Portales Inmobiliarios", "slug": "portales-inmobiliarios", "beneficio": "Compra, venta y alquiler de inmuebles con geolocalización."},
+        {"id": 30, "rubro": "Hotelería y Turismo", "slug": "hoteleria-turismo", "beneficio": "Reserva de habitaciones, tours y experiencias inolvidables."},
+        {"id": 31, "rubro": "Restaurantes y Dark Kitchens", "slug": "restaurantes-dark-kitchen", "beneficio": "Menú digital antojable con delivery propio y rápido."},
+        {"id": 32, "rubro": "Pastelerías y Repostería Fina", "slug": "pasteleria-reposteria", "beneficio": "Tortas personalizadas y postres finos para eventos."},
+        {"id": 33, "rubro": "Florerías y Regalos Sorpresa", "slug": "florerias-regalos", "beneficio": "Arreglos florales y detalles con dedicatoria impresa."},
+        {"id": 34, "rubro": "Bufetes Jurídicos y Abogados", "slug": "bufete-juridico-abogados", "beneficio": "Asesoría legal corporativa y defensa en litigios."},
+        {"id": 35, "rubro": "Contabilidad y Finanzas", "slug": "contabilidad-finanzas", "beneficio": "Gestión tributaria, declaraciones y auditorías contables."},
+        {"id": 36, "rubro": "Educación y Academias Online", "slug": "educacion-academias-online", "beneficio": "Cursos especializados con plataforma LMS y certificación."},
+        {"id": 37, "rubro": "Arquitectura y Construcción", "slug": "arquitectura-construccion", "beneficio": "Diseño de planos, renders 3D y ejecución de obras."},
+        {"id": 38, "rubro": "Seguros y Corretaje", "slug": "seguros-corretaje", "beneficio": "Protección patrimonial, pólizas de salud y vehiculares."},
+        {"id": 39, "rubro": "Producción Audiovisual", "slug": "produccion-audiovisual", "beneficio": "Spots publicitarios, streaming y fotografía corporativa."},
+        {"id": 40, "rubro": "Ciberseguridad y Redes", "slug": "ciberseguridad-redes", "beneficio": "Protección de infraestructura de servidores y auditorías TI."}
+    ]
+}

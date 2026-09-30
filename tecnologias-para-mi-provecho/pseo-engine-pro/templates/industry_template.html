@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="{{IDIOMA}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITULO_SECCION}} | {{SITIO_NOMBRE}}</title>
+    <meta name="description" content="{{DESCRIPCION_SECCION}}">
+    
+    <!-- Schema.org Dinámico por Industria -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "{{SCHEMA_TYPE}}",
+      "name": "{{RUBRO_NOMBRE}}",
+      "description": "{{BENEFICIO}}",
+      "provider": {
+        "@type": "Organization",
+        "name": "{{SITIO_NOMBRE}}"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #030712;
+            --surface: #0f172a;
+            --surface-glass: rgba(15, 23, 42, 0.8);
+            --border: rgba(255, 255, 255, 0.08);
+            --primary: {{COLOR_PRIMARIO}};
+            --secondary: {{COLOR_SECUNDARIO}};
+            --text: #f8fafc;
+            --muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.07) 0%, transparent 40%);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--surface-glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav { display: flex; gap: 18px; flex-wrap: wrap; }
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover, nav a.active { color: var(--text); }
+
+        .main-container {
+            flex: 1;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .hero-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 44px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        p { font-size: 16px; color: var(--muted); line-height: 1.6; margin-bottom: 28px; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .feature-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        .feature-item h4 { font-size: 14px; color: #fff; margin-bottom: 6px; }
+        .feature-item p { font-size: 12px; margin: 0; color: var(--muted); }
+
+        .cta-box {
+            background: rgba(3, 7, 18, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .btn-wa {
+            background: #059669;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: transform 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-wa:hover { transform: scale(1.02); }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 12px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            background: var(--surface-glass);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">⚡ {{RUBRO_NOMBRE}}</a>
+        <nav>
+            <a href="index.html" class="active">Inicio</a>
+            <a href="servicios.html">Soluciones</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="contacto.html">Contacto Directo</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="hero-card">
+            <span class="category-badge">Categoría: {{CATEGORIA_NOMBRE}}</span>
+            <h1>Especialistas en {{RUBRO_NOMBRE}}</h1>
+            <p>{{BENEFICIO}} Diseñado bajo estándares de arquitectura limpia, velocidad extrema y máxima optimización para motores de búsqueda.</p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>🚀 Arquitectura Escalable</h4>
+                    <p>Estructura multi-página lista para expandirse masivamente.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔒 Schema.org Integrado</h4>
+                    <p>Marcado semántico avanzado inyectado en el código fuente.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📱 UI/UX Fluida</h4>
+                    <p>Diseño responsivo optimizado para conversión en móviles y PC.</p>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <div>
+                    <strong style="color: #fff; font-size: 14px;">¿Listo para implementar este rubro?</strong>
+                    <p style="margin: 2px 0 0 0; font-size: 12px; color: var(--muted);">Atención inmediata con cotización personalizada.</p>
+                </div>
+                <a href="https://wa.me/{{WHATSAPP}}?text=Hola,%20deseo%20implementar%20una%20solución%20para%20el%20rubro:%20{{RUBRO_NOMBRE}}" class="btn-wa" target="_blank">📲 Consultar por WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        {{SITIO_NOMBRE}} &bull; Motor pSEO Multi-Industria v7.0
+    </footer>
+
+</body>
+</html>

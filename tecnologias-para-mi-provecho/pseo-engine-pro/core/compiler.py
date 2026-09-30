@@ -1,12 +1,12 @@
 ﻿# ==============================================================================
-# Módulo Core: PSEOTierCompiler (Generador Multi-Tier por Niveles de Complejidad)
+# Módulo Core: PSEOIndustryCompiler (Generador Multi-Industria 40 Rubros)
 # ==============================================================================
 import os
 import json
 from datetime import datetime
 
-class PSEOTierCompiler:
-    def __init__(self, config_path="data/config.json", data_path="data/keywords.json", template_path="templates/master_template.html", output_dir="output"):
+class PSEOIndustryCompiler:
+    def __init__(self, config_path="data/config.json", data_path="data/keywords.json", template_path="templates/industry_template.html", output_dir="output"):
         self.config_path = config_path
         self.data_path = data_path
         self.template_path = template_path
@@ -17,7 +17,7 @@ class PSEOTierCompiler:
             with open(self.config_path, "r", encoding="utf-8-sig") as f:
                 self.config = json.load(f)
             with open(self.data_path, "r", encoding="utf-8-sig") as f:
-                self.items = json.load(f)
+                self.rubros_db = json.load(f)
             with open(self.template_path, "r", encoding="utf-8-sig") as f:
                 self.template = f.read()
             os.makedirs(self.output_dir, exist_ok=True)
@@ -26,69 +26,57 @@ class PSEOTierCompiler:
             print(f"[Error de Carga] No se pudieron inicializar los recursos: {e}")
             return False
 
-    def obtener_configuracion_tier(self, tier):
-        # Define los apartados según el nivel de complejidad solicitado
-        if tier == 1:
-            return 4, "Nivel 1 (Simple - 4 Apartados)", ["index.html", "catalogo.html", "checkout.html", "contacto.html"]
-        elif tier == 2:
-            return 10, "Nivel 2 (Medio - 10 Apartados)", ["index.html", "catalogo.html", "productos.html", "detalles.html", "carrito.html", "checkout.html", "blog.html", "nosotros.html", "soporte.html", "contacto.html"]
-        elif tier == 3:
-            return 20, "Nivel 3 (Avanzado - 20 Apartados)", [f"seccion-{i}.html" for i in range(1, 21)]
-        elif tier == 4:
-            return 40, "Nivel 4 (Alto Calibre / Enterprise - 40 Apartados)", [f"enterprise-modulo-{i}.html" for i in range(1, 41)]
+    def obtener_schema_por_categoria(self, categoria):
+        if categoria == "ecommerce":
+            return "Product"
+        elif categoria == "servicios_locales":
+            return "LocalBusiness"
+        elif categoria == "salud_bienestar":
+            return "MedicalBusiness"
+        elif categoria == "corporativo_inmobiliario":
+            return "RealEstateAgent"
         else:
-            return 4, "Nivel 1 (Simple)", ["index.html", "catalogo.html", "checkout.html", "contacto.html"]
+            return "Organization"
 
     def compilar(self):
         if not self.cargar_recursos():
             return
             
-        tier_nivel = self.config.get("tier_complejidad", 1)
-        cantidad_apartados, tier_nombre, lista_paginas = self.obtener_configuracion_tier(tier_nivel)
-        
-        print(f"=== [PSEO Enterprise v6.0] Compilando Tier {tier_nivel}: {tier_nombre} ({cantidad_apartados} apartados) ===")
-        
+        print("=== [PSEO Enterprise v7.0] Compilando Sistema Multi-Industria (40 Rubros) ===")
         urls_sitemap = []
         fecha_actual = datetime.now().strftime("%Y-%m-%d")
+        total_compilado = 0
         
-        # Construir barra de navegación dinámica con las primeras páginas del Tier
-        nav_html = ""
-        paginas_nav = lista_paginas[:6] # Mostramos hasta 6 en el menú visual para mantener elegancia
-        for pag in paginas_nav:
-            nombre_amigable = pag.replace(".html", "").replace("-", " ").title()
-            nav_html += f'<a href="{pag}">{nombre_amigable}</a>\n'
-
-        # Generar masivamente cada página del Tier interconectada
-        for idx, filename in enumerate(lista_paginas, 1):
-            file_path = os.path.join(self.output_dir, filename)
+        # Recorrer todas las categorías y sus rubros
+        for categoria, lista_rubros in self.rubros_db.items():
+            schema_type = self.obtener_schema_por_categoria(categoria)
+            cat_nombre = categoria.replace("_", " ").title()
             
-            # Seleccionar un item de datos de forma rotativa si hay más páginas que datos
-            item_data = self.items[(idx - 1) % len(self.items)]
-            
-            titulo_pag = f"{item_data['nombre']} - Módulo {idx}"
-            desc_pag = item_data['descripcion']
-            precio_str = f'<div class="price-tag">Inversión: S/ {item_data["precio"]}</div>' if "precio" in item_data else ""
-            
-            html = self.template
-            html = html.replace("{{IDIOMA}}", self.config["idioma"])
-            html = html.replace("{{SITIO_NOMBRE}}", self.config["sitio_nombre"])
-            html = html.replace("{{COLOR_PRIMARIO}}", self.config["color_primario"])
-            html = html.replace("{{COLOR_SECUNDARIO}}", self.config["color_secundario"])
-            html = html.replace("{{WHATSAPP}}", self.config["contacto_whatsapp"].replace("+", ""))
-            html = html.replace("{{TIER_NOMBRE}}", tier_nombre)
-            html = html.replace("{{MODULO_ID}}", f"{idx}/{cantidad_apartados}")
-            html = html.replace("{{NAV_LINKS_HTML}}", nav_html)
-            html = html.replace("{{TITULO_PAGINA}}", titulo_pag)
-            html = html.replace("{{DESCRIPCION_PAGINA}}", desc_pag)
-            html = html.replace("{{PRECIO_HTML}}", precio_str)
-            
-            with open(file_path, "w", encoding="utf-8") as out:
-                out.write(html)
+            for item in lista_rubros:
+                filename = f"{item['slug']}.html"
+                file_path = os.path.join(self.output_dir, filename)
                 
-            urls_sitemap.append(f"{self.config['dominio_base']}/{filename}")
-            print(f"[{idx}/{cantidad_apartados}] Módulo compilado con UI fluida -> {filename}")
+                html = self.template
+                html = html.replace("{{IDIOMA}}", self.config["idioma"])
+                html = html.replace("{{SITIO_NOMBRE}}", self.config["sitio_nombre"])
+                html = html.replace("{{COLOR_PRIMARIO}}", self.config["color_primario"])
+                html = html.replace("{{COLOR_SECUNDARIO}}", self.config["color_secundario"])
+                html = html.replace("{{WHATSAPP}}", self.config["contacto_whatsapp"].replace("+", ""))
+                html = html.replace("{{CATEGORIA_NOMBRE}}", cat_nombre)
+                html = html.replace("{{RUBRO_NOMBRE}}", item["rubro"])
+                html = html.replace("{{BENEFICIO}}", item["beneficio"])
+                html = html.replace("{{SCHEMA_TYPE}}", schema_type)
+                html = html.replace("{{TITULO_SECCION}}", f"{item['rubro']} Profesional")
+                html = html.replace("{{DESCRIPCION_SECCION}}", f"Solución optimizada para {item['rubro']}. {item['beneficio']}")
+                
+                with open(file_path, "w", encoding="utf-8") as out:
+                    out.write(html)
+                    
+                urls_sitemap.append(f"{self.config['dominio_base']}/{filename}")
+                total_compilado += 1
+                print(f"[{total_compilado}] Rubro compilado [{cat_nombre}] -> {filename}")
 
-        # Generación del Sitemap XML optimizado
+        # Generar Sitemap XML global optimizado
         sitemap_path = os.path.join(self.output_dir, "sitemap.xml")
         sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         for url in urls_sitemap:
@@ -98,4 +86,4 @@ class PSEOTierCompiler:
         with open(sitemap_path, "w", encoding="utf-8") as sm:
             sm.write(sitemap_xml)
             
-        print(f"\n[Éxito v6.0] Sistema compilado exitosamente. {cantidad_apartados} apartados generados con diseño de alto calibre.")
+        print(f"\n[Éxito Total v7.0] {total_compilado} páginas de los 40 rubros generadas e indexadas correctamente.")

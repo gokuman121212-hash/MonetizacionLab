@@ -1,11 +1,13 @@
 ﻿{
-    "sitio_nombre": "Aura Luxury Store & Services",
-    "dominio_base": "https://auraluxury.com",
+    "sitio_nombre": "Enterprise Multi-Industry Engine",
+    "dominio_base": "https://pseo-enterprise.com",
     "autor": "Cristhian Flores",
     "idioma": "es-PE",
-    "color_primario": "#6366f1",
-    "color_secundario": "#ec4899",
+    "color_primario": "#3b82f6",
+    "color_secundario": "#10b981",
     "contacto_whatsapp": "+51900000000",
     "moneda": "PEN",
-    "tier_complejidad": 4
+    "categoria_activa": "servicios_locales",
+    "rubro_activo": "Soporte Técnico y Mantenimiento",
+    "tier_complejidad": 2
 }

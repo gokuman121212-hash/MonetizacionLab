@@ -1,8 +1,8 @@
 ﻿# ==============================================================================
-# Script Principal - PSEO Enterprise v6.0 Multi-Tier
+# Script Principal - PSEO Enterprise v7.0 Multi-Industria
 # ==============================================================================
-from core.compiler import PSEOTierCompiler
+from core.compiler import PSEOIndustryCompiler
 
 if __name__ == "__main__":
-    motor = PSEOTierCompiler()
+    motor = PSEOIndustryCompiler()
     motor.compilar()
