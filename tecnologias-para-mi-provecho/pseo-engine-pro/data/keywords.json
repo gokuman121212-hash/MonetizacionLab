@@ -2,16 +2,29 @@
     {
         "keyword": "mantenimiento de pc gamer",
         "ubicacion": "Arequipa",
-        "beneficio": "Optimización de rendimiento y limpieza térmica profesional"
+        "beneficio": "Optimización de rendimiento y limpieza térmica profesional",
+        "volumen_busqueda": "Alto",
+        "intencion": "Transaccional"
     },
     {
         "keyword": "desarrollo web a medida",
         "ubicacion": "Alto Selva Alegre",
-        "beneficio": "Sistemas rápidos y modernos para pequeños negocios"
+        "beneficio": "Sistemas rápidos y modernos para pequeños negocios",
+        "volumen_busqueda": "Medio",
+        "intencion": "Comercial"
     },
     {
         "keyword": "soporte técnico a domicilio",
         "ubicacion": "Arequipa",
-        "beneficio": "Diagnóstico inmediato y solución de errores de software"
+        "beneficio": "Diagnóstico inmediato y solución de errores de software",
+        "volumen_busqueda": "Alto",
+        "intencion": "Urgente"
+    },
+    {
+        "keyword": "automatización de procesos con python",
+        "ubicacion": "Arequipa",
+        "beneficio": "Scripts a medida para eliminar tareas repetitivas y ahorrar horas",
+        "volumen_busqueda": "Especializado",
+        "intencion": "B2B"
     }
 ]

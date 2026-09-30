@@ -1,29 +1,51 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang="{{IDIOMA}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    
+    <!-- OpenGraph SEO Social Meta Tags -->
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:type" content="website">
+    
     <style>
+        :root { --bg: #030712; --card: #111827; --border: #1f2937; --accent: {{COLOR_PRIMARIO}}; --text: #f9fafb; --muted: #9ca3af; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background: #030712; color: #f9fafb; padding: 40px 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; width: 100%; max-width: 600px; padding: 32px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); }
-        .badge { background: #047857; color: #a7f3d0; font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; text-transform: uppercase; display: inline-block; margin-bottom: 16px; }
-        h1 { font-size: 24px; color: #34d399; margin-bottom: 12px; line-height: 1.3; }
-        p { font-size: 14px; color: #9ca3af; line-height: 1.6; margin-bottom: 24px; }
-        .cta-box { background: #1f2937; border-left: 4px solid #10b981; padding: 14px 18px; border-radius: 0 8px 8px 0; font-size: 14px; color: #e5e7eb; margin-bottom: 24px; }
-        .footer { font-size: 11px; color: #4b5563; border-top: 1px solid #1f2937; padding-top: 16px; text-align: center; }
+        body { background: var(--bg); color: var(--text); padding: 40px 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; width: 100%; max-width: 650px; padding: 36px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7); }
+        .meta-badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+        .badge { background: #064e3b; color: #a7f3d0; font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; text-transform: uppercase; }
+        .badge-intent { background: #1e3a8a; color: #93c5fd; }
+        h1 { font-size: 26px; color: var(--text); margin-bottom: 14px; line-height: 1.25; }
+        h1 span { color: var(--accent); }
+        p { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+        .cta-box { background: #1f2937; border-left: 4px solid var(--accent); padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 14px; color: #e5e7eb; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; }
+        .btn-wa { background: #059669; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 13px; white-space: nowrap; transition: opacity 0.2s; }
+        .btn-wa:hover { opacity: 0.9; }
+        .footer { font-size: 12px; color: #4b5563; border-top: 1px solid var(--border); padding-top: 16px; display: flex; justify-content: space-between; }
     </style>
 </head>
 <body>
     <div class="card">
-        <span class="badge">Servicio Verificado en {{UBICACION}}</span>
-        <h1>{{HEADING}}</h1>
-        <p>¿Buscas soluciones eficientes? Ofrecemos el mejor servicio de <strong>{{KEYWORD}}</strong> en {{UBICACION}}. {{BENEFICIO}} para garantizar el máximo rendimiento y satisfacción.</p>
-        <div class="cta-box">
-            🚀 <strong>¿Necesitas este servicio ahora?</strong> Contáctanos directamente y agenda tu atención inmediata.
+        <div class="meta-badges">
+            <span class="badge">📍 {{UBICACION}}</span>
+            <span class="badge badge-intent">Intención: {{INTENCION}}</span>
         </div>
-        <div class="footer">Generado automáticamente por PSEO Engine Pro • MonetizacionLab</div>
+        <h1>Servicio Experto de <span>{{KEYWORD}}</span> en {{UBICACION}}</h1>
+        <p>¿Buscas soluciones técnicas de alto rendimiento? Ofrecemos el servicio líder de <strong>{{KEYWORD}}</strong> en {{UBICACION}}. Garantizamos {{BENEFICIO}} para asegurar resultados óptimos y profesionales.</p>
+        
+        <div class="cta-box">
+            <span>🚀 <strong>¿Requieres atención inmediata?</strong><br>Habla directamente con un especialista local.</span>
+            <a href="https://wa.me/{{WHATSAPP}}?text=Hola,%20necesito%20información%20sobre%20{{KEYWORD}}%20en%20{{UBICACION}}" class="btn-wa" target="_blank">Contactar WhatsApp</a>
+        </div>
+        
+        <div class="footer">
+            <span>{{SITIO_NOMBRE}}</span>
+            <span>Motor pSEO v3.0 Pro</span>
+        </div>
     </div>
 </body>
 </html>
