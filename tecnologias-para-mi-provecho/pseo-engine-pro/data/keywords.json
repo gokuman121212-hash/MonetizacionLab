@@ -4,27 +4,31 @@
         "ubicacion": "Arequipa",
         "beneficio": "Optimización de rendimiento y limpieza térmica profesional",
         "volumen_busqueda": "Alto",
-        "intencion": "Transaccional"
+        "intencion": "Transaccional",
+        "precio_estimado": "80"
     },
     {
         "keyword": "desarrollo web a medida",
         "ubicacion": "Alto Selva Alegre",
         "beneficio": "Sistemas rápidos y modernos para pequeños negocios",
         "volumen_busqueda": "Medio",
-        "intencion": "Comercial"
+        "intencion": "Comercial",
+        "precio_estimado": "350"
     },
     {
         "keyword": "soporte técnico a domicilio",
         "ubicacion": "Arequipa",
         "beneficio": "Diagnóstico inmediato y solución de errores de software",
         "volumen_busqueda": "Alto",
-        "intencion": "Urgente"
+        "intencion": "Urgente",
+        "precio_estimado": "60"
     },
     {
         "keyword": "automatización de procesos con python",
         "ubicacion": "Arequipa",
         "beneficio": "Scripts a medida para eliminar tareas repetitivas y ahorrar horas",
         "volumen_busqueda": "Especializado",
-        "intencion": "B2B"
+        "intencion": "B2B",
+        "precio_estimado": "250"
     }
 ]

@@ -3,6 +3,7 @@
     "dominio_base": "https://tu-dominio-ejemplo.com",
     "autor": "Cristhian Flores",
     "idioma": "es-PE",
-    "color_primario": "#10b981",
-    "contacto_whatsapp": "+51900000000"
+    "color_primario": "#2563eb",
+    "contacto_whatsapp": "+51900000000",
+    "moneda": "PEN"
 }
