@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparación General de Culatas y Motor | Arequipa MotorLab & Taller Pro</title>
+    <meta name="description" content="Rectificado de culata, cambio de empaques, anillos, válvulas y puesta a punto de faja o cadena de distribución.">
+    
+    <!-- Schema.org Corporativo JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "AutoRepair",
+      "name": "Reparación General de Culatas y Motor",
+      "description": "Rectificado de culata, cambio de empaques, anillos, válvulas y puesta a punto de faja o cadena de distribución.",
+      "priceRange": "S/ 1200.00",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Arequipa",
+        "addressCountry": "PE"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-blue: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Navbar estilo corporativo tecnológico (MSI/Lenovo) */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .brand span { color: var(--accent-blue); }
+
+        nav { display: flex; gap: 28px; }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        nav a:hover { color: var(--accent-blue); }
+
+        /* Contenedor principal estructurado */
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Hero Banner Estilo Samsung/MSI */
+        .hero-banner {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .category-pill {
+            background: var(--accent-glow);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 16px;
+            line-height: 1.15;
+            max-width: 800px;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+
+        .price-badge {
+            font-size: 20px;
+            font-weight: 700;
+            color: #34d399;
+            background: rgba(52, 211, 153, 0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(52, 211, 153, 0.2);
+        }
+
+        /* Secciones Secundarias ordenadas en Grid */
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .feature-card h3 { font-size: 18px; color: #fff; margin-bottom: 10px; }
+        .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+        /* Footer corporativo limpio */
+        footer {
+            background: rgba(11, 15, 25, 0.95);
+            border-top: 1px solid var(--border-color);
+            padding: 40px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links { display: flex; justify-content: center; gap: 20px; font-size: 12px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; }
+        .footer-links a:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand">⚡ Arequipa MotorLab & Taller Pro <span>| Enterprise</span></a>
+        <nav>
+            <a href="#overview">Descripción</a>
+            <a href="#specs">Especificaciones</a>
+            <a href="#support">Soporte Técnico</a>
+            <a href="https://wa.me/51900000000" target="_blank" style="color: #34d399; font-weight: 600;">Contacto WhatsApp</a>
+        </nav>
+    </header>
+
+    <div class="wrapper" id="overview">
+        <!-- Hero Banner Corporativo -->
+        <div class="hero-banner">
+            <span class="category-pill">Categoría: Motor y Electrónica</span>
+            <h1>Reparación General de Culatas y Motor</h1>
+            <p class="hero-desc">Rectificado de culata, cambio de empaques, anillos, válvulas y puesta a punto de faja o cadena de distribución. Solución integral desarrollada bajo altos estándares de calidad, garantizando máxima eficiencia, fiabilidad y rendimiento en cada kilómetro.</p>
+            
+            <div class="hero-actions">
+                <a href="https://wa.me/51900000000?text=Hola,%20deseo%20cotizar%20el%20servicio:%20Reparación General de Culatas y Motor%20(S/1200.00)" class="btn-primary" target="_blank">📲 Solicitar Cotización Directa</a>
+                <div class="price-badge">Tarifa: S/ 1200.00</div>
+            </div>
+        </div>
+
+        <!-- Secciones de Especificaciones Técnicas (Estilo Lenovo/MSI) -->
+        <div id="specs">
+            <h2 class="section-title">⚙️ Especificaciones y Características Clave</h2>
+            <div class="grid-features">
+                <div class="feature-card">
+                    <h3>Precisión Computarizada</h3>
+                    <p>Diagnóstico y calibración ejecutada con interfaces digitales de última generación y software actualizado.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Garantía de Rendimiento</h3>
+                    <p>Componentes homologados y pruebas de esfuerzo en ruta para asegurar óptimo funcionamiento.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Soporte Post-Servicio</h3>
+                    <p>Seguimiento técnico especializado y revisiones preventivas programadas para tranquilidad total.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Cobertura y Soporte -->
+        <div id="support">
+            <h2 class="section-title">🛡️ Respaldo y Cobertura Técnica</h2>
+            <div class="grid-features">
+                <div class="feature-card">
+                    <h3>Atención Especializada</h3>
+                    <p>Personal técnico certificado con amplia experiencia en mecánica automotriz avanzada y sistemas electrónicos.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Infraestructura de Taller</h3>
+                    <p>Equipamiento hidráulico y herramientas especializadas para intervenciones limpias y seguras.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>Arequipa MotorLab & Taller Pro &bull; Todos los derechos reservados.</div>
+        <div class="footer-links">
+            <a href="sitemap.xml">Mapa del Sitio XML</a>
+            <a href="#">Políticas de Privacidad</a>
+            <a href="#">Términos de Servicio</a>
+        </div>
+    </footer>
+
+</body>
+</html>

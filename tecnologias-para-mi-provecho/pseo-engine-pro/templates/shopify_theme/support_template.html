@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="{{IDIOMA}}">
+<head>
+    <meta charset="UTF-8">
+    <title>Soporte y Garantía | {{TITULO}}</title>
+    <style>
+        :root { --bg-page: #fbfbfd; --text-main: #1d1d1f; --text-muted: #6e6e73; --border-subtle: #d2d2d7; --accent: #0066cc; --card-bg: #ffffff; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+        body { background-color: var(--bg-page); color: var(--text-main); line-height: 1.6; }
+        header { position: sticky; top: 0; background: rgba(251,251,253,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; padding: 18px 48px; }
+        .logo { font-weight: 700; font-size: 17px; color: var(--text-main); text-decoration: none; }
+        nav { display: flex; gap: 32px; align-items: center; }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; }
+        nav a.active { color: var(--text-main); }
+        .container { max-width: 900px; margin: 60px auto; padding: 0 24px; }
+        .content-box { background: var(--card-bg); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+        h1 { font-size: 36px; font-weight: 700; margin-bottom: 20px; }
+        p { font-size: 16px; color: var(--text-muted); margin-bottom: 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">⚡ {{SITIO_NOMBRE}}</a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="especificaciones.html">Especificaciones</a>
+            <a href="soporte.html" class="active">Soporte Técnico</a>
+        </nav>
+    </header>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Volver al Inicio</a>
+        <div class="content-box">
+            <h1>Soporte y Garantía Oficial</h1>
+            <p>Servicio: <strong>{{TITULO}}</strong></p>
+            <p>Ofrecemos garantía documentada en todas nuestras intervenciones. Si experimentas alguna incidencia tras el servicio, nuestro equipo de soporte técnico en Arequipa te atenderá de forma prioritaria.</p>
+        </div>
+    </div>
+</body>
+</html>

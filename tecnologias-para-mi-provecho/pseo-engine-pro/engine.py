@@ -1,8 +1,5 @@
-﻿# ==============================================================================
-# Script Principal - PSEO Enterprise v7.0 Multi-Industria
-# ==============================================================================
-from core.compiler import PSEOIndustryCompiler
+﻿from core.compiler import PISShopifyCompiler
 
 if __name__ == "__main__":
-    motor = PSEOIndustryCompiler()
+    motor = PISShopifyCompiler()
     motor.compilar()

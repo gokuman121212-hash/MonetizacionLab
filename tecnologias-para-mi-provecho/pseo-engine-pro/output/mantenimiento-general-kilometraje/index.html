@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento General Preventivo por Kilometraje | Arequipa MotorLab & Taller Pro</title>
+    <meta name="description" content="Paquete integral cada 5,000 / 10,000 km: cambio de aceite sintético, filtros de aire, aceite, cabina y 40 puntos de revisión.">
+    <style>
+        :root {
+            --bg-page: #fbfbfd;
+            --text-main: #1d1d1f;
+            --text-muted: #6e6e73;
+            --border-subtle: #d2d2d7;
+            --accent: #0066cc;
+            --card-bg: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: var(--bg-page); color: var(--text-main); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+        /* Barra de Navegación Estilo Shopify Enterprise */
+        header {
+            position: sticky; top: 0; z-index: 1000;
+            background: rgba(251, 251, 253, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 18px 48px;
+        }
+        .logo { font-weight: 700; font-size: 17px; color: var(--text-main); text-decoration: none; display: flex; gap: 8px; align-items: center; }
+        .logo span { color: var(--accent); }
+        nav { display: flex; gap: 32px; align-items: center; }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: var(--text-main); }
+        .btn-nav-cta { background: var(--text-main); color: #fff; padding: 8px 18px; border-radius: 20px; font-weight: 600; font-size: 13px; text-decoration: none; transition: opacity 0.2s; }
+        .btn-nav-cta:hover { opacity: 0.85; }
+
+        /* Hero Banner Principal */
+        .hero {
+            max-width: 1050px; margin: 60px auto; padding: 0 24px;
+            text-align: center; display: flex; flex-direction: column; align-items: center; gap: 24px;
+        }
+        .badge-category {
+            background: #e8f2ff; color: var(--accent); font-size: 11px; font-weight: 600;
+            padding: 6px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        h1 { font-size: 48px; font-weight: 700; letter-spacing: -0.015em; color: var(--text-main); max-width: 800px; line-height: 1.1; }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 680px; }
+        
+        .hero-card {
+            background: var(--card-bg); border: 1px solid var(--border-subtle);
+            border-radius: 24px; padding: 50px; width: 100%; margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04); text-align: left;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;
+        }
+        .hero-info { max-width: 550px; }
+        .hero-info h3 { font-size: 24px; font-weight: 600; margin-bottom: 10px; }
+        .price-tag { font-size: 28px; font-weight: 700; color: #10b981; margin-top: 15px; }
+
+        .btn-action {
+            background: var(--accent); color: white; padding: 14px 28px; border-radius: 12px;
+            text-decoration: none; font-weight: 600; font-size: 14px; box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+            transition: transform 0.2s; display: inline-block;
+        }
+        .btn-action:hover { transform: scale(1.02); }
+
+        /* Grid de Secciones de Navegación Real */
+        .grid-sections {
+            max-width: 1050px; margin: 0 auto 80px auto; padding: 0 24px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;
+        }
+        .section-card {
+            background: var(--card-bg); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 36px;
+            text-decoration: none; color: var(--text-main); display: flex; flex-direction: column; gap: 12px;
+            transition: all 0.25s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+        .section-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
+        .section-card h3 { font-size: 20px; font-weight: 600; color: var(--text-main); }
+        .section-card p { font-size: 14px; color: var(--text-muted); }
+        .link-text { color: var(--accent); font-weight: 600; font-size: 13px; margin-top: 8px; }
+
+        /* Footer */
+        footer {
+            background: #f5f5f7; border-top: 1px solid var(--border-subtle); padding: 40px 0;
+            text-align: center; color: var(--text-muted); font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">⚡ Arequipa MotorLab & Taller Pro</a>
+        <nav>
+            <a href="index.html" class="active">Inicio</a>
+            <a href="especificaciones.html">Especificaciones</a>
+            <a href="soporte.html">Soporte Técnico</a>
+            <a href="https://wa.me/51900000000" target="_blank" class="btn-nav-cta">WhatsApp Directo</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <span class="badge-category">Especialidad: Servicios de Emergencia</span>
+        <h1>Mantenimiento General Preventivo por Kilometraje</h1>
+        <p>Paquete integral cada 5,000 / 10,000 km: cambio de aceite sintético, filtros de aire, aceite, cabina y 40 puntos de revisión.</p>
+
+        <div class="hero-card">
+            <div class="hero-info">
+                <h3>Servicio Profesional Certificado</h3>
+                <p>Implementación rigurosa con estándares corporativos, equipos de última generación y soporte garantizado.</p>
+                <div class="price-tag">Inversión: S/ 220.00</div>
+            </div>
+            <a href="https://wa.me/51900000000?text=Hola,%20deseo%20contratar%20el%20servicio:%20Mantenimiento General Preventivo por Kilometraje%20(S/220.00)" class="btn-action" target="_blank">📲 Agendar por WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Navegación a Páginas Secundarias Reales -->
+    <div class="grid-sections">
+        <a href="especificaciones.html" class="section-card">
+            <h3>⚙️ Especificaciones Técnicas</h3>
+            <p>Conoce los detalles de hardware, protocolos de escaneo y normativas aplicadas en este procedimiento.</p>
+            <span class="link-text">Explorar detalles &rarr;</span>
+        </a>
+        <a href="soporte.html" class="section-card">
+            <h3>🛡️ Garantía y Soporte</h3>
+            <p>Revisa nuestra cobertura de respaldo, tiempos de respuesta y atención post-servicio especializada.</p>
+            <span class="link-text">Ver coberturas &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        <p>Arequipa MotorLab & Taller Pro &bull; Arquitectura Multi-Página Enterprise Estilo Shopify</p>
+    </footer>
+
+</body>
+</html>

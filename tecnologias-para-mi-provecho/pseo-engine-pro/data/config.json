@@ -1,13 +1,10 @@
 ﻿{
-    "sitio_nombre": "Enterprise Multi-Industry Engine",
-    "dominio_base": "https://pseo-enterprise.com",
+    "sitio_nombre": "Arequipa MotorLab & Taller Pro",
+    "dominio_base": "https://arequipamotors.com",
     "autor": "Cristhian Flores",
     "idioma": "es-PE",
-    "color_primario": "#3b82f6",
-    "color_secundario": "#10b981",
+    "color_primario": "#f59e0b",
+    "color_secundario": "#ef4444",
     "contacto_whatsapp": "+51900000000",
-    "moneda": "PEN",
-    "categoria_activa": "servicios_locales",
-    "rubro_activo": "Soporte Técnico y Mantenimiento",
-    "tier_complejidad": 2
+    "moneda": "PEN"
 }
